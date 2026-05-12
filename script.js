@@ -12,49 +12,7 @@ const restaurants = [
     blurb: "The cutest place with yummy home-cooked French food and standout coffee.",
     page: "rafaels.html",
     unlocked: true,
-  },
-  {
-    name: "Chapter One : the modern local",
-    rating: 4.5,
-    reviews: 1820,
-    price: "$20–30",
-    tags: ["American", "Cocktails", "Downtown"],
-    blurb: "A downtown Santa Ana favorite for craft cocktails and elevated pub fare.",
-  },
-  {
-    name: "Playground",
-    rating: 4.4,
-    reviews: 2150,
-    price: "$30–60",
-    tags: ["New American", "Chef-driven"],
-    blurb: "Adventurous, ever-changing menu in the heart of the Artists Village.",
-  },
-  {
-    name: "El Mercado Modern Cuisine",
-    rating: 4.6,
-    reviews: 980,
-    price: "$20–30",
-    tags: ["Mexican", "Brunch", "Patio"],
-    blurb: "Modern Mexican plates and weekend brunch with a lively patio.",
-  },
-  {
-    name: "Lola Gaspar",
-    rating: 4.4,
-    reviews: 1340,
-    price: "$20–30",
-    tags: ["Spanish", "Tapas", "Bar"],
-    blurb: "Spanish-Latin tapas, sangria and one of the best happy hours downtown.",
-  },
-  {
-    name: "Taqueria Los Olivos",
-    rating: 4.7,
-    reviews: 760,
-    price: "$5–15",
-    tags: ["Tacos", "Casual", "Late night"],
-    blurb: "No-frills tacos, salsas with personality, and lines that move fast.",
-  },
-];
-
+  }
 /* 
 This section stores all the restaurant information.
 Each restaurant has details like its name, rating, price,
