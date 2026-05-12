@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rafael's Kitchen & Mad Coffee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b0a08;--bg2:#131210;--panel:#17150f;--line:rgba(212,175,107,.15);--text:#f4ecd8;--muted:#9a907a;--accent:#d4af6b;--accent-2:#f0d493}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  em{font-style:italic;color:var(--accent);font-family:'Cormorant Garamond',serif}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:-.02em;line-height:1.1}
+  h1{font-size:clamp(3rem,8vw,6rem)}
+  h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:1rem}
+  .eyebrow{text-transform:uppercase;letter-spacing:.3em;font-size:.7rem;color:var(--accent);margin-bottom:1rem}
+  .muted{color:var(--muted)}
+  .nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2rem;background:rgba(11,10,8,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:'Cormorant Garamond',serif;font-size:1.3rem}
+  .brand-mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#1a1407;font-weight:700;font-size:.8rem;font-family:'Inter'}
+  .nav-links{display:flex;gap:1.8rem}
+  .nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--accent)}
+  .hero{position:relative;min-height:90vh;display:grid;place-items:center;text-align:center;padding:6rem 2rem;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(212,175,107,.22),transparent 70%)}
+  .hero-inner{max-width:820px;position:relative;z-index:1}
+  .rating{display:inline-flex;gap:.5rem;align-items:center;margin-bottom:1.5rem;font-size:.95rem;color:var(--accent)}
+  .lede{color:var(--muted);font-size:1.1rem;margin:1.5rem auto 2.5rem;max-width:560px}
+  .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.95rem 2rem;border-radius:999px;font-size:.9rem;font-weight:500;letter-spacing:.05em;cursor:pointer;border:1px solid var(--line);transition:all .2s}
+  .btn-gold{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#1a1407;border:none}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px rgba(212,175,107,.5)}
+  .btn-ghost{color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .info-row{display:flex;gap:1.5rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+  .info-row span::before{content:"·";margin-right:1.5rem;color:var(--accent)}
+  .info-row span:first-child::before{display:none}
+  .section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
+  .section-head{text-align:center;margin-bottom:4rem}
+  .filter-row{display:flex;gap:.6rem;justify-content:center;margin-bottom:3rem;flex-wrap:wrap}
+  .chip{padding:.5rem 1.2rem;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);font-size:.8rem;cursor:pointer;letter-spacing:.05em;transition:all .2s}
+  .chip:hover{color:var(--accent)}
+  .chip.active{background:var(--accent);color:#1a1407;border-color:var(--accent)}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+  .menu-item{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.6rem;animation:fadeUp .5s ease both;transition:border-color .3s,transform .3s}
+  .menu-item:hover{border-color:rgba(212,175,107,.4);transform:translateY(-2px)}
+  .menu-item .top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.5rem}
+  .menu-item h3{font-size:1.4rem}
+  .menu-item .price{color:var(--accent);font-family:'Cormorant Garamond',serif;font-size:1.3rem}
+  .menu-item p{color:var(--muted);font-size:.9rem}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+  .review{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.8rem;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--text)}
+  .review .stars{color:var(--accent);font-size:.9rem;margin-bottom:.8rem;font-style:normal;font-family:'Inter'}
+  .visit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:3rem}
+  .visit-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.8rem}
+  .visit-card h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--accent);margin-bottom:.8rem}
+  .bars{display:flex;align-items:flex-end;gap:6px;height:80px;margin-top:1rem}
+  .bar{flex:1;background:rgba(212,175,107,.25);border-radius:4px 4px 0 0;transition:background .3s}
+  .bar.now{background:linear-gradient(to top,var(--accent),var(--accent-2))}
+  .footer{border-top:1px solid var(--line);padding:3rem 2rem;text-align:center;color:var(--muted);font-size:.85rem;background:var(--bg2)}
+  @media(max-width:640px){.nav{padding:1rem}.nav-links{display:none}.section{padding:4rem 1.2rem}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="brand"><span class="brand-mark">RK</span><span>Rafael's <em>Kitchen</em></span></a>
+  <nav class="nav-links">
+    <a href="#menu">Menu</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Santa Ana · French Brunch & Coffee</p>
+    <h1>Rafael's <em>Kitchen</em><br/>& Mad Coffee</h1>
+    <div class="rating">★★★★★ <span class="muted">4.7 (597) · $10–20</span></div>
+    <p class="lede">Home-cooked French comfort food and lovingly pulled coffee, served from a hidden gem in Sandpointe.</p>
+    <div class="cta-row">
+      <a href="#menu" class="btn btn-gold">View Menu</a>
+      <a href="#visit" class="btn btn-ghost">Order Pickup</a>
+    </div>
+    <div class="info-row">
+      <span>Outdoor seating</span><span>Vegan options</span><span>Wi-Fi</span><span>Open · closes 9 PM</span>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="section">
+  <div class="section-head">
+    <p class="eyebrow">The menu</p>
+    <h2>Made with care, served warm</h2>
+  </div>
+  <div class="filter-row">
+    <button class="chip active" data-cat="all">All</button>
+    <button class="chip" data-cat="brunch">Brunch</button>
+    <button class="chip" data-cat="sandwich">Sandwiches</button>
+    <button class="chip" data-cat="coffee">Coffee</button>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<section id="reviews" class="section">
+  <div class="section-head">
+    <p class="eyebrow">Loved by guests</p>
+    <h2>What people say</h2>
+  </div>
+  <div class="reviews">
+    <div class="review"><div class="stars">★★★★★</div>"The cutest place with yummy home cooked French food!!"</div>
+    <div class="review"><div class="stars">★★★★★</div>"Ordered the steak and eggs with fries for breakfast and it blew me away."</div>
+    <div class="review"><div class="stars">★★★★★</div>"Vegan burrito was delicious and staff was very kind!"</div>
+  </div>
+</section>
+
+<section id="visit" class="section">
+  <div class="section-head">
+    <p class="eyebrow">Visit</p>
+    <h2>Come say hi</h2>
+  </div>
+  <div class="visit-grid">
+    <div class="visit-card"><h4>Address</h4><p class="muted">201 Sandpointe Ave Suite 150<br/>Santa Ana, CA</p><p class="muted" style="margin-top:.5rem;font-size:.85rem">Validated parking available</p></div>
+    <div class="visit-card"><h4>Hours</h4><p class="muted">Mon–Fri · 7 AM – 9 PM<br/>Sat–Sun · 8 AM – 9 PM</p></div>
+    <div class="visit-card"><h4>Popular times</h4><p class="muted" style="font-size:.85rem">Live: busier than usual</p><div class="bars" id="bars"></div></div>
+  </div>
+</section>
+
+<footer class="footer">© <span id="year"></span> Rafael's Kitchen & Mad Coffee · Santa Ana, CA</footer>
+
+<script>
+const menu = [
+  {cat:"brunch",name:"Steak & Eggs",price:"$18",desc:"Seared sirloin, two eggs any style, golden frites."},
+  {cat:"brunch",name:"French Toast",price:"$13",desc:"Brioche, vanilla custard, maple, seasonal berries."},
+  {cat:"brunch",name:"Croque Madame",price:"$15",desc:"Ham, gruyère, béchamel, sunny-side egg."},
+  {cat:"brunch",name:"Vegan Burrito",price:"$12",desc:"Scrambled tofu, black beans, avocado, salsa verde."},
+  {cat:"brunch",name:"Quiche Lorraine",price:"$11",desc:"Bacon, gruyère, side salad."},
+  {cat:"brunch",name:"Avocado Tartine",price:"$12",desc:"Sourdough, smashed avocado, radish, lemon oil."},
+  {cat:"sandwich",name:"Jambon-Beurre",price:"$11",desc:"Baguette, French ham, cultured butter."},
+  {cat:"sandwich",name:"Le Poulet",price:"$13",desc:"Roast chicken, herbed aioli, arugula."},
+  {cat:"sandwich",name:"Veggie Press",price:"$12",desc:"Grilled zucchini, eggplant, goat cheese, pesto."},
+  {cat:"sandwich",name:"Tuna Niçoise",price:"$13",desc:"Olive oil tuna, egg, olives, baguette."},
+  {cat:"sandwich",name:"Croque Monsieur",price:"$13",desc:"Ham, gruyère, béchamel, toasted."},
+  {cat:"sandwich",name:"Caprese",price:"$12",desc:"Burrata, tomato, basil, balsamic."},
+  {cat:"coffee",name:"Espresso",price:"$3",desc:"House blend, single shot."},
+  {cat:"coffee",name:"Cappuccino",price:"$5",desc:"Velvet steamed milk, dusted cocoa."},
+  {cat:"coffee",name:"Café au Lait",price:"$5",desc:"Drip coffee, warm milk."},
+  {cat:"coffee",name:"Mocha",price:"$6",desc:"Espresso, dark chocolate, steamed milk."},
+  {cat:"coffee",name:"Matcha Latte",price:"$6",desc:"Ceremonial matcha, oat milk."},
+  {cat:"coffee",name:"Cold Brew",price:"$5",desc:"16-hour steeped, served over ice."},
+];
+const grid = document.getElementById("menuGrid");
+function render(cat){
+  grid.innerHTML = "";
+  menu.filter(m => cat==="all"||m.cat===cat).forEach((m,i)=>{
+    const el = document.createElement("div");
+    el.className = "menu-item";
+    el.style.animationDelay = (i*30)+"ms";
+    el.innerHTML = `<div class="top"><h3>${m.name}</h3><span class="price">${m.price}</span></div><p>${m.desc}</p>`;
+    grid.appendChild(el);
+  });
+}
+render("all");
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
+  c.classList.add("active");
+  render(c.dataset.cat);
+}));
+const bars = document.getElementById("bars");
+const heights = [25,35,55,75,80,70,60,55,65,80,90,70,40];
+const nowIdx = 7;
+heights.forEach((h,i)=>{
+  const b=document.createElement("div");
+  b.className="bar"+(i===nowIdx?" now":"");
+  b.style.height=h+"%";
+  bars.appendChild(b);
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

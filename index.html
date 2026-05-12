@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santa Ana Eats — Discover Local Restaurants</title>
+  <meta name="description" content="A curated dark-themed guide to the best restaurants in Santa Ana, California." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#" class="brand">
+      <span class="brand-mark">SA</span>
+      <span class="brand-name">Santa Ana <em>Eats</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#restaurants">Restaurants</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Santa Ana, California</p>
+      <h1>Where the city <em>eats</em>.</h1>
+      <p class="lede">A handpicked guide to the most-loved kitchens, cafés and hidden gems across Santa Ana — from French brunch to late-night tacos.</p>
+      <a href="#restaurants" class="btn btn-gold">Explore Restaurants</a>
+    </div>
+    <div class="hero-glow"></div>
+  </section>
+
+  <!-- RESTAURANTS -->
+  <section id="restaurants" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Featured</p>
+      <h2>The list</h2>
+      <p class="muted">Click a restaurant to reveal its full page.</p>
+    </div>
+
+    <div class="rest-grid" id="restGrid"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section narrow">
+    <p class="eyebrow">About</p>
+    <h2>Eat local. Eat well.</h2>
+    <p class="muted">Santa Ana Eats is an independent guide to the food scene of Orange County's beating heart. We highlight the chefs, baristas and family-run spots that make this city worth a detour.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div>
+      <p class="brand-name">Santa Ana <em>Eats</em></p>
+      <p class="muted small">© <span id="year"></span> — Made with care in OC.</p>
+    </div>
+    <div class="muted small">
+      hello@santaanaeats.example<br/>
+      Santa Ana, CA
+    </div>
+  </footer>
+
+  <!-- MODAL: contains the previously-built Rafael's site -->
+  <div class="modal" id="restModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-shell" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <iframe id="restFrame" title="Restaurant" src="about:blank"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
