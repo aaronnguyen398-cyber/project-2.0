@@ -48,7 +48,7 @@ const restaurants = [
   },
 ];
 
-/* ─── Menus (NO COMMENTS as requested) ─── */
+/* ─── Menus ─── */
 
 const rafaelsMenu = [
   { name: "French Toast with Berries and Syrup", category: "Brunch", price: "$13", desc: "Thick-cut brioche, fresh berries, maple syrup, and powdered sugar.", popular: true },
@@ -73,7 +73,7 @@ const lunaMenu = [
   { name: "Churro Cheesecake", category: "Dessert", price: "$9", desc: "Cheesecake with cinnamon sugar churro crust.", popular: true },
 ];
 
-/* ─── Reviews (NO COMMENTS as requested) ─── */
+/* ─── Reviews ─── */
 
 const rafaelsReviews = [
   { text: "The cutest place with yummy home cooked French food!!", author: "Google Reviewer", rating: 5 },
