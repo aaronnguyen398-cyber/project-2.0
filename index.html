@@ -22,7 +22,7 @@
     </div>
   </nav>
 
-  <!-- Directory Hero -->
+ 
   <header class="hero" id="dirHero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -32,7 +32,7 @@
     </div>
   </header>
 
-  <!-- Restaurant Grid -->
+ 
   <section id="restaurants" class="section">
     <div class="container">
       <h2 class="section-title">Featured Restaurants</h2>
@@ -142,7 +142,7 @@
   </section>
 
   <!-- ===== THE BITE CLUB DETAIL ===== -->
-  <section id="biteClubSection" class="section detail-section hidden">
+  <section id="biteSection" class="section detail-section hidden">
     <div class="container">
       <button class="back-btn" onclick="showDirectory()">&larr; Back to all restaurants</button>
 
@@ -233,6 +233,96 @@
     </div>
   </section>
 
+  <section id="lunaSection" class="section detail-section hidden">
+<div class="container">
+
+<button class="back-btn" onclick="showDirectory()">&larr; Back to all restaurants</button>
+
+<div class="detail-hero">
+<div class="detail-hero-bg"></div>
+
+<div class="detail-hero-content">
+<p class="detail-label">Santa Ana, CA</p>
+
+<h1 class="detail-title">Luna Bistro</h1>
+
+<div class="detail-meta">
+<span class="detail-stars">&#9733; 4.9</span>
+<span class="detail-divider">|</span>
+<span>(184)</span>
+<span class="detail-divider">|</span>
+<span>$20–30</span>
+<span class="detail-divider">|</span>
+<span>Modern Mexican</span>
+</div>
+
+<div class="detail-tags">
+<span class="tag">Cocktails</span>
+<span class="tag">Outdoor seating</span>
+<span class="tag">Live music</span>
+</div>
+
+<div class="detail-actions">
+<button class="btn-primary" onclick="openModal('luna')">View Menu</button>
+
+<a href="tel:7145551122" class="btn-outline">Call</a>
+
+<a href="https://www.google.com/maps/search/?api=1&query=412+N+Main+St+Santa+Ana+CA+92701" target="_blank" class="btn-outline">Directions</a>
+</div>
+</div>
+</div>
+
+<div class="detail-overview">
+<div class="detail-overview-grid">
+
+<div>
+<h2 class="detail-section-title">Overview</h2>
+
+<p class="detail-text">
+Luna Bistro combines modern Mexican flavors with a stylish atmosphere in downtown Santa Ana. Guests love the handcrafted cocktails, live music nights, and flavorful tacos.
+</p>
+
+<div class="detail-features">
+<div class="detail-feature"><span>&#9200;</span> Open · Closes 11 PM</div>
+<div class="detail-feature"><span>&#127864;</span> Cocktails</div>
+<div class="detail-feature"><span>&#127925;</span> Live music</div>
+<div class="detail-feature"><span>&#127796;</span> Outdoor seating</div>
+</div>
+</div>
+
+<div class="detail-review-card">
+<h3>Google Review Summary</h3>
+
+<div class="detail-review-stars">
+&#9733;&#9733;&#9733;&#9733;&#9733;
+<span class="detail-score">4.9</span>
+<span class="detail-count">(184 reviews)</span>
+</div>
+
+<p class="detail-text">
+Customers praise the birria tacos, energetic atmosphere, and unique drinks like the horchata espresso martini.
+</p>
+</div>
+
+</div>
+</div>
+
+<div class="detail-menu">
+<h2 class="detail-section-title">Menu</h2>
+
+<div class="menu-filters" id="lunaMenuFilters"></div>
+
+<div class="menu-grid" id="lunaMenuGrid"></div>
+</div>
+
+<div class="detail-reviews">
+<h2 class="detail-section-title">Reviews</h2>
+
+<div class="reviews-grid" id="lunaReviewsGrid"></div>
+</div>
+
+</div>
+</section>
   <!-- Footer -->
   <footer class="footer" id="mainFooter">
     <div class="container footer-inner">

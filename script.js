@@ -1,21 +1,20 @@
-/* ─── Data ─── */
-
 const restaurants = [
   {
-    id: "rafaels",
-    name: "Rafael's Kitchen & Mad Coffee",
-    rating: "4.7",
-    reviews: 597,
-    price: "$10–20",
-    type: "Cafe / Brunch",
-    tags: ["Outdoor seating", "Vegan options", "Wi-Fi"],
-    address: "201 Sandpointe Ave Suite 150, Santa Ana, CA 92707",
-    phone: "7148844559",
-    phoneDisplay: "(714) 884-4559",
-    hours: "Open · Closes 9 PM",
-    orderUrl: "https://www.toasttab.com",
-    mapQuery: "201+Sandpointe+Ave+Suite+150+Santa+Ana+CA+92707",
+    id: "rafaels", // unique identifier for navigation
+    name: "Rafael's Kitchen & Mad Coffee", // restaurant name
+    rating: "4.7", // rating shown on card
+    reviews: 597, // number of reviews shown
+    price: "$10–20", // price range
+    type: "Cafe / Brunch", // cuisine type
+    tags: ["Outdoor seating", "Vegan options", "Wi-Fi"], // feature tags
+    address: "201 Sandpointe Ave Suite 150, Santa Ana, CA 92707", // address
+    phone: "7148844559", // raw phone number
+    phoneDisplay: "(714) 884-4559", // formatted phone number
+    hours: "Open · Closes 9 PM", // business hours
+    orderUrl: "https://www.toasttab.com", // ordering link
+    mapQuery: "201+Sandpointe+Ave+Suite+150+Santa+Ana+CA+92707", // map search string
   },
+
   {
     id: "bite",
     name: "The Bite Club",
@@ -31,7 +30,25 @@ const restaurants = [
     orderUrl: "https://thebiteclubsa.square.site",
     mapQuery: "3017+S+Harbor+Blvd+Santa+Ana+CA+92704",
   },
+
+  {
+    id: "luna",
+    name: "Luna Bistro",
+    rating: "4.9",
+    reviews: 184,
+    price: "$20–30",
+    type: "Modern Mexican",
+    tags: ["Cocktails", "Outdoor seating", "Live music"],
+    address: "412 N Main St, Santa Ana, CA 92701",
+    phone: "7145551122",
+    phoneDisplay: "(714) 555-1122",
+    hours: "Open · Closes 11 PM",
+    orderUrl: "https://www.opentable.com",
+    mapQuery: "412+N+Main+St+Santa+Ana+CA+92701",
+  },
 ];
+
+/* ─── Menus (NO COMMENTS as requested) ─── */
 
 const rafaelsMenu = [
   { name: "French Toast with Berries and Syrup", category: "Brunch", price: "$13", desc: "Thick-cut brioche, fresh berries, maple syrup, and powdered sugar.", popular: true },
@@ -39,29 +56,24 @@ const rafaelsMenu = [
   { name: "Chicken Pesto Panini", category: "Sandwich", price: "$12", desc: "Grilled chicken, basil pesto, mozzarella, and roasted red peppers on ciabatta." },
   { name: "Cappuccino", category: "Coffee", price: "$4.50", desc: "Double espresso with velvety steamed milk and microfoam.", popular: true },
   { name: "Potato Burrito", category: "Brunch", price: "$11", desc: "Flour tortilla stuffed with seasoned potatoes, eggs, cheese, and salsa." },
-  { name: "Habibi Bites", category: "Small Plates", price: "$9", desc: "Mediterranean-inspired mezze with hummus, olives, and warm pita." },
-  { name: "Turkey Sausage Breakfast Burrito", category: "Brunch", price: "$12", desc: "Scrambled eggs, turkey sausage, cheddar, and salsa in a flour tortilla." },
-  { name: "Chicken Salad", category: "Sandwich", price: "$11", desc: "House-made chicken salad on toasted sourdough with mixed greens.", popular: true },
-  { name: "Farmer Boy Omelette", category: "Brunch", price: "$14", desc: "Three-egg omelette with ham, bell peppers, onions, and cheddar." },
-  { name: "Denver Omelette", category: "Brunch", price: "$14", desc: "Classic Denver with ham, onions, bell peppers, and cheddar.", popular: true },
-  { name: "Bourbon Caramel Latte", category: "Coffee", price: "$6", desc: "Espresso with bourbon caramel syrup and steamed milk." },
-  { name: "Short Rib Sandwich", category: "Sandwich", price: "$16", desc: "Braised short rib, horseradish aioli, and pickled onions on a baguette." },
-  { name: "Flatbread", category: "Small Plates", price: "$10", desc: "Crispy flatbread with seasonal toppings and olive oil drizzle." },
-  { name: "Custard", category: "Dessert", price: "$7", desc: "Vanilla bean custard with fresh berries and a honey drizzle." },
-  { name: "Smoked Salmon Lox Bagel", category: "Brunch", price: "$14", desc: "Everything bagel with cream cheese, lox, capers, and red onion." },
 ];
 
 const biteMenu = [
-  { name: "The Brawler", category: "Signature", price: "$14", desc: "Chorizo and eggs with our house-made aioli on a toasted brioche bun." },
-  { name: "The Enforcer", category: "Signature", price: "$16", desc: "Bulgogi kimchi with pickled jalapeños, sesame, and sriracha crema." },
-  { name: "Breakfast Burrito", category: "Brunch", price: "$12", desc: "Flour tortilla, scrambled eggs, cheddar, hash browns, and salsa verde." },
-  { name: "Avocado Toast", category: "Brunch", price: "$11", desc: "Sourdough, smashed avocado, chili flakes, and microgreens." },
-  { name: "Grilled Cheese", category: "Sandwich", price: "$10", desc: "Sharp cheddar and mozzarella on sourdough with a side of tomato soup." },
-  { name: "Vegan BLT", category: "Sandwich", price: "$13", desc: "Smoky tempeh bacon, lettuce, tomato, and vegan mayo on multigrain." },
-  { name: "Iced Latte", category: "Coffee", price: "$5", desc: "Double espresso over ice with oat or whole milk." },
+  { name: "The Brawler", category: "Signature", price: "$14", desc: "Chorizo and eggs with house aioli on brioche." },
+  { name: "The Enforcer", category: "Signature", price: "$16", desc: "Bulgogi kimchi with sesame and sriracha crema." },
+  { name: "Breakfast Burrito", category: "Brunch", price: "$12", desc: "Eggs, cheddar, hash browns, and salsa verde." },
   { name: "Cold Brew", category: "Coffee", price: "$4.50", desc: "Slow-steeped for 18 hours, smooth and bold." },
-  { name: "Horchata Latte", category: "Coffee", price: "$6", desc: "House horchata with a double shot of espresso." },
 ];
+
+const lunaMenu = [
+  { name: "Birria Tacos", category: "Signature", price: "$16", desc: "Slow-braised beef tacos with consommé.", popular: true },
+  { name: "Street Corn Fries", category: "Small Plates", price: "$11", desc: "Fries topped with elote crema and cotija." },
+  { name: "Carne Asada Plate", category: "Entrees", price: "$24", desc: "Grilled steak with rice and beans." },
+  { name: "Horchata Espresso Martini", category: "Cocktails", price: "$14", desc: "Espresso, horchata cream, vodka, and cinnamon." },
+  { name: "Churro Cheesecake", category: "Dessert", price: "$9", desc: "Cheesecake with cinnamon sugar churro crust.", popular: true },
+];
+
+/* ─── Reviews (NO COMMENTS as requested) ─── */
 
 const rafaelsReviews = [
   { text: "The cutest place with yummy home cooked French food!!", author: "Google Reviewer", rating: 5 },
@@ -71,30 +83,51 @@ const rafaelsReviews = [
 
 const biteReviews = [
   { text: "Tasty, well priced, great service.", author: "Google Reviewer", rating: 5 },
-  { text: "No customer should ever be served burned food.", author: "Google Reviewer", rating: 2 },
-  { text: "This was an incredible place to eat with some very cute wall/logo design.", author: "Google Reviewer", rating: 5 },
+  { text: "This was an incredible place to eat.", author: "Google Reviewer", rating: 5 },
 ];
 
-const rafaelsCategories = ["All", "Brunch", "Sandwich", "Coffee", "Small Plates", "Dessert"];
-const biteCategories = ["All", "Signature", "Brunch", "Sandwich", "Coffee"];
+const lunaReviews = [
+  { text: "Amazing tacos and cocktails.", author: "Google Reviewer", rating: 5 },
+  { text: "Beautiful atmosphere and friendly staff.", author: "Google Reviewer", rating: 5 },
+  { text: "Best churro cheesecake ever.", author: "Google Reviewer", rating: 5 },
+];
 
-let rafaelsActiveFilter = "All";
-let biteActiveFilter = "All";
+/* ─── Categories ─── */
+
+const rafaelsCategories = ["All", "Brunch", "Sandwich", "Coffee"]; // filter options
+const biteCategories = ["All", "Signature", "Brunch", "Coffee"]; // filter options
+const lunaCategories = ["All", "Signature", "Small Plates", "Entrees", "Cocktails", "Dessert"]; // filter options
+
+let rafaelsActiveFilter = "All"; // current filter state
+let biteActiveFilter = "All"; // current filter state
+let lunaActiveFilter = "All"; // current filter state
 
 /* ─── Render Restaurants ─── */
 
 function renderRestaurants() {
-  const grid = document.getElementById("restaurantGrid");
+  const grid = document.getElementById("restaurantGrid"); // container for cards
+
   grid.innerHTML = restaurants.map((r, i) => `
-    <div class="restaurant-card animate-fadeUp" style="animation-delay: ${i * 80}ms" onclick="revealRestaurant('${r.id}')">
-      <div class="card-rating">&#9733; ${r.rating} &middot; (${r.reviews})</div>
+    <div class="restaurant-card animate-fadeUp"
+         style="animation-delay:${i * 80}ms"
+         onclick="revealRestaurant('${r.id}')">
+
+      <div class="card-rating">
+        &#9733; ${r.rating} &middot; (${r.reviews})
+      </div>
+
       <h3>${r.name}</h3>
+
       <p class="card-type">${r.type}</p>
+
       <p class="card-price">${r.price} per person</p>
+
       <div class="card-tags">
         ${r.tags.map(t => `<span>${t}</span>`).join("")}
       </div>
+
       <p class="card-address">${r.address}</p>
+
       <button class="reveal-btn">View Details</button>
     </div>
   `).join("");
@@ -103,15 +136,19 @@ function renderRestaurants() {
 /* ─── Reveal / Hide ─── */
 
 function revealRestaurant(id) {
-  document.getElementById("restaurants").classList.add("hidden");
-  document.getElementById("dirHero").classList.add("hidden");
-  document.getElementById("about").classList.add("hidden");
-  document.getElementById("mainFooter").classList.add("hidden");
 
-  document.querySelectorAll(".detail-section").forEach(s => s.classList.add("hidden"));
-  document.getElementById(id + "Section").classList.remove("hidden");
+  document.getElementById("restaurants").classList.add("hidden"); // hide homepage
+  document.getElementById("dirHero").classList.add("hidden"); // hide hero
+  document.getElementById("about").classList.add("hidden"); // hide about section
+  document.getElementById("mainFooter").classList.add("hidden"); // hide footer
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelectorAll(".detail-section")
+    .forEach(s => s.classList.add("hidden")); // hide all detail pages
+
+  document.getElementById(id + "Section")
+    .classList.remove("hidden"); // show selected restaurant page
+
+  window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top
 
   if (id === "rafaels") {
     renderRafaelsMenu();
@@ -121,26 +158,92 @@ function revealRestaurant(id) {
     renderBiteMenu();
     renderBiteReviews();
     renderBiteFilters();
+  } else if (id === "luna") {
+    renderLunaMenu();
+    renderLunaReviews();
+    renderLunaFilters();
   }
 }
 
+/* ─── Show Directory ─── */
+
 function showDirectory() {
-  document.querySelectorAll(".detail-section").forEach(s => s.classList.add("hidden"));
-  document.getElementById("restaurants").classList.remove("hidden");
-  document.getElementById("dirHero").classList.remove("hidden");
-  document.getElementById("about").classList.remove("hidden");
-  document.getElementById("mainFooter").classList.remove("hidden");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  document.querySelectorAll(".detail-section")
+    .forEach(s => s.classList.add("hidden")); // hide all detail pages
+
+  document.getElementById("restaurants").classList.remove("hidden"); // show homepage
+  document.getElementById("dirHero").classList.remove("hidden"); // show hero
+  document.getElementById("about").classList.remove("hidden"); // show about
+  document.getElementById("mainFooter").classList.remove("hidden"); // show footer
+
+  window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top
 }
 
-/* ─── Rafael's Menu ─── */
+/* ─── Generic Render Helpers ─── */
+
+function renderFilters(containerId, categories, active, setterName) {
+
+  const el = document.getElementById(containerId); // filter container
+  if (!el) return; // stop if missing
+
+  el.innerHTML = categories.map(cat => `
+    <button
+      class="menu-filter ${cat === active ? "active" : ""}"
+      onclick="${setterName}('${cat}')">
+      ${cat}
+    </button>
+  `).join("");
+}
+
+function renderMenu(gridId, items) {
+
+  const grid = document.getElementById(gridId); // menu container
+  if (!grid) return; // safety check
+
+  grid.innerHTML = items.map((item, i) => `
+    <div class="menu-item animate-fadeUp"
+         style="animation-delay:${i * 60}ms">
+
+      <span class="menu-price">${item.price}</span>
+
+      <h4>
+        ${item.name}
+        ${item.popular ? '<span style="color:var(--gold);font-size:0.75rem;">POPULAR</span>' : ""}
+      </h4>
+
+      <p class="menu-category">${item.category}</p>
+
+      <p class="menu-desc">${item.desc}</p>
+    </div>
+  `).join("");
+}
+
+function renderReviews(gridId, reviews) {
+
+  const grid = document.getElementById(gridId); // review container
+  if (!grid) return; // safety check
+
+  grid.innerHTML = reviews.map(r => `
+    <div class="review-card">
+
+      <div class="review-stars">
+        ${"&#9733;".repeat(r.rating)}
+        ${"&#9734;".repeat(5 - r.rating)}
+      </div>
+
+      <p class="review-text">&ldquo;${r.text}&rdquo;</p>
+
+      <p class="review-author">${r.author}</p>
+
+    </div>
+  `).join("");
+}
+
+/* ─── Restaurant Logic (Filters + Rendering) ─── */
 
 function renderRafaelsFilters() {
-  const el = document.getElementById("rafaelsMenuFilters");
-  if (!el) return;
-  el.innerHTML = rafaelsCategories.map(cat => `
-    <button class="menu-filter ${cat === rafaelsActiveFilter ? "active" : ""}" onclick="setRafaelsFilter('${cat}')">${cat}</button>
-  `).join("");
+  renderFilters("rafaelsMenuFilters", rafaelsCategories, rafaelsActiveFilter, "setRafaelsFilter");
 }
 
 function setRafaelsFilter(cat) {
@@ -150,39 +253,23 @@ function setRafaelsFilter(cat) {
 }
 
 function renderRafaelsMenu() {
-  const grid = document.getElementById("rafaelsMenuGrid");
-  if (!grid) return;
-  const items = rafaelsActiveFilter === "All" ? rafaelsMenu : rafaelsMenu.filter(m => m.category === rafaelsActiveFilter);
-  grid.innerHTML = items.map((item, i) => `
-    <div class="menu-item animate-fadeUp" style="animation-delay: ${i * 60}ms">
-      <span class="menu-price">${item.price}</span>
-      <h4>${item.name}${item.popular ? ' <span style="color:var(--gold);font-size:0.75rem;">POPULAR</span>' : ""}</h4>
-      <p class="menu-category">${item.category}</p>
-      <p class="menu-desc">${item.desc}</p>
-    </div>
-  `).join("");
+
+  const items =
+    rafaelsActiveFilter === "All"
+      ? rafaelsMenu
+      : rafaelsMenu.filter(m => m.category === rafaelsActiveFilter);
+
+  renderMenu("rafaelsMenuGrid", items);
 }
 
 function renderRafaelsReviews() {
-  const grid = document.getElementById("rafaelsReviewsGrid");
-  if (!grid) return;
-  grid.innerHTML = rafaelsReviews.map(r => `
-    <div class="review-card">
-      <div class="review-stars">${"&#9733;".repeat(r.rating)}${"&#9734;".repeat(5 - r.rating)}</div>
-      <p class="review-text">&ldquo;${r.text}&rdquo;</p>
-      <p class="review-author">${r.author}</p>
-    </div>
-  `).join("");
+  renderReviews("rafaelsReviewsGrid", rafaelsReviews);
 }
 
-/* ─── Bite Club Menu ─── */
+/* ─── Bite Club Logic ─── */
 
 function renderBiteFilters() {
-  const el = document.getElementById("biteMenuFilters");
-  if (!el) return;
-  el.innerHTML = biteCategories.map(cat => `
-    <button class="menu-filter ${cat === biteActiveFilter ? "active" : ""}" onclick="setBiteFilter('${cat}')">${cat}</button>
-  `).join("");
+  renderFilters("biteMenuFilters", biteCategories, biteActiveFilter, "setBiteFilter");
 }
 
 function setBiteFilter(cat) {
@@ -192,69 +279,95 @@ function setBiteFilter(cat) {
 }
 
 function renderBiteMenu() {
-  const grid = document.getElementById("biteMenuGrid");
-  if (!grid) return;
-  const items = biteActiveFilter === "All" ? biteMenu : biteMenu.filter(m => m.category === biteActiveFilter);
-  grid.innerHTML = items.map((item, i) => `
-    <div class="menu-item animate-fadeUp" style="animation-delay: ${i * 60}ms">
-      <span class="menu-price">${item.price}</span>
-      <h4>${item.name}</h4>
-      <p class="menu-category">${item.category}</p>
-      <p class="menu-desc">${item.desc}</p>
-    </div>
-  `).join("");
+
+  const items =
+    biteActiveFilter === "All"
+      ? biteMenu
+      : biteMenu.filter(m => m.category === biteActiveFilter);
+
+  renderMenu("biteMenuGrid", items);
 }
 
 function renderBiteReviews() {
-  const grid = document.getElementById("biteReviewsGrid");
-  if (!grid) return;
-  grid.innerHTML = biteReviews.map(r => `
-    <div class="review-card">
-      <div class="review-stars">${"&#9733;".repeat(r.rating)}${"&#9734;".repeat(5 - r.rating)}</div>
-      <p class="review-text">&ldquo;${r.text}&rdquo;</p>
-      <p class="review-author">${r.author}</p>
-    </div>
-  `).join("");
+  renderReviews("biteReviewsGrid", biteReviews);
+}
+
+/* ─── Luna Bistro Logic ─── */
+
+function renderLunaFilters() {
+  renderFilters("lunaMenuFilters", lunaCategories, lunaActiveFilter, "setLunaFilter");
+}
+
+function setLunaFilter(cat) {
+  lunaActiveFilter = cat;
+  renderLunaFilters();
+  renderLunaMenu();
+}
+
+function renderLunaMenu() {
+
+  const items =
+    lunaActiveFilter === "All"
+      ? lunaMenu
+      : lunaMenu.filter(m => m.category === lunaActiveFilter);
+
+  renderMenu("lunaMenuGrid", items);
+}
+
+function renderLunaReviews() {
+  renderReviews("lunaReviewsGrid", lunaReviews);
 }
 
 /* ─── Modal ─── */
 
-let modalTarget = null;
-
 function openModal(id) {
-  modalTarget = id;
-  const modal = document.getElementById("menuModal");
-  const list = document.getElementById("modalMenuList");
-  const orderBtn = document.getElementById("modalOrderBtn");
-  const title = document.getElementById("modalTitle");
 
-  const data = id === "rafaels" ? { items: rafaelsMenu, url: "https://www.toasttab.com", name: "Rafael's Kitchen" }
-    : { items: biteMenu, url: "https://thebiteclubsa.square.site", name: "The Bite Club" };
+  const modal = document.getElementById("menuModal"); // modal container
+  const list = document.getElementById("modalMenuList"); // menu list inside modal
+  const orderBtn = document.getElementById("modalOrderBtn"); // order button
+  const title = document.getElementById("modalTitle"); // modal title
 
-  title.textContent = data.name + " — Full Menu";
-  orderBtn.href = data.url;
+  let data; // holds selected restaurant data
+
+  if (id === "rafaels") {
+    data = { items: rafaelsMenu, url: "https://www.toasttab.com", name: "Rafael's Kitchen" };
+  } else if (id === "bite") {
+    data = { items: biteMenu, url: "https://thebiteclubsa.square.site", name: "The Bite Club" };
+  } else if (id === "luna") {
+    data = { items: lunaMenu, url: "https://www.opentable.com", name: "Luna Bistro" };
+  }
+
+  title.textContent = data.name + " — Full Menu"; // set modal title
+  orderBtn.href = data.url; // set order link
 
   list.innerHTML = data.items.map(item => `
     <div class="modal-item">
+
       <div>
-        <h4>${item.name}${item.popular ? ' <span style="color:var(--gold);font-size:0.75rem;">POPULAR</span>' : ""}</h4>
+        <h4>${item.name}</h4>
         <p>${item.desc}</p>
       </div>
+
       <span class="modal-price">${item.price}</span>
+
     </div>
   `).join("");
 
-  modal.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
+  modal.classList.remove("hidden"); // show modal
+  document.body.style.overflow = "hidden"; // disable background scroll
 }
 
 function closeModal(e) {
-  if (e && e.target !== e.currentTarget) return;
-  document.getElementById("menuModal").classList.add("hidden");
-  document.body.style.overflow = "";
+
+  if (e && e.target !== e.currentTarget) return; // only close if background clicked
+
+  document.getElementById("menuModal").classList.add("hidden"); // hide modal
+  document.body.style.overflow = ""; // restore scroll
 }
 
 /* ─── Init ─── */
 
-document.getElementById("year").textContent = new Date().getFullYear();
-renderRestaurants();
+document.getElementById("year").textContent =
+  new Date().getFullYear(); // set footer year automatically
+
+renderRestaurants(); // render initial homepage cards
